@@ -7,36 +7,66 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+:root {
+    /* Game-themed dark design system */
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 220 15% 15%;
+    --primary-foreground: 0 0% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 10% 20%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 10% 18%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 30 100% 60%;
+    --accent-foreground: 220 15% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 10% 25%;
+    --input: 220 10% 25%;
+    --ring: 30 100% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Game-specific color tokens */
+    --game-orange: 30 100% 60%;
+    --game-orange-glow: 30 100% 70%;
+    --game-blue: 220 70% 50%;
+    --game-green: 120 60% 50%;
+    --game-red: 0 75% 60%;
+    --game-yellow: 45 100% 60%;
+    
+    /* UI specific tokens */
+    --hud-bg: 220 15% 8% / 0.9;
+    --hud-border: 30 100% 60% / 0.3;
+    --wanted-star: 45 100% 60%;
+    --health-bar: 120 60% 50%;
+    --money-color: 120 60% 50%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 15% 12%), hsl(220 15% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(30 100% 60%), hsl(30 100% 70%));
+    --gradient-glow: radial-gradient(circle, hsl(30 100% 60% / 0.2), transparent);
+    
+    /* Shadows and effects */
+    --shadow-game: 0 8px 32px hsl(220 15% 5% / 0.8);
+    --shadow-glow: 0 0 20px hsl(30 100% 60% / 0.3);
+    --shadow-hud: 0 4px 16px hsl(220 15% 5% / 0.6);
+
+    /* Animations */
+    --transition-game: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +131,24 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Game-specific utility classes */
+@layer utilities {
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-game {
+    transition: var(--transition-game);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
   }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Star, Heart, DollarSign } from 'lucide-react';
 
 interface HUDProps {
@@ -9,7 +9,7 @@ interface HUDProps {
   weapons: string[];
 }
 
-export const HUD: React.FC<HUDProps> = ({
+export const HUD: React.FC<HUDProps> = memo(({
   health,
   money,
   wantedLevel,
@@ -74,4 +74,4 @@ export const HUD: React.FC<HUDProps> = ({
       </div>
     </>
   );
-};
+});
